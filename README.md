@@ -1,11 +1,11 @@
-A collection of extensions methods for [DateTime], [Duration], and [int] to allow
+A collection of extensions methods for `DateTime`, `Duration`, and `int` to allow
 for easier date and time calculations.
 
 ## Features
 
-* Turns integers into [Duration] objects.
-* Easily get [DateTime] objects in the past or future from a [Duration].
-* Get related dates and times for a [DateTime].
+* Turns integers into `Duration` objects.
+* Easily get `DateTime` objects in the past or future from a `Duration`.
+* Get related dates and times for a `DateTime`.
 
 ## Getting started
 
@@ -33,4 +33,4 @@ DateTime.now().endOfYear
 
 ## License
 
-MIT License, see the [LICENSE.md](LICENSE.md) file for details.
+MIT License, see the [LICENSE](LICENSE) file for details.
