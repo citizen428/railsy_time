@@ -46,4 +46,122 @@ void main() {
       });
     });
   });
+
+  group('DateTime extensions', () {
+    test('.beginningOfDay', () {
+      final expected = DateTime(now.year, now.month, now.day, 0, 0, 0, 0, 0);
+
+      withClock(Clock.fixed(now), () {
+        expect(now.beginningOfDay, equals(expected));
+      });
+    });
+
+    test('.endOfDay', () {
+      final expected = DateTime(
+        now.year,
+        now.month,
+        now.day,
+        23,
+        59,
+        59,
+        999,
+        999,
+      );
+
+      withClock(Clock.fixed(now), () {
+        expect(now.endOfDay, equals(expected));
+      });
+    });
+
+    test('.beginningOfWeek', () {
+      final expected = DateTime(now.year, now.month, 15, 0, 0, 0, 0, 0);
+
+      withClock(Clock.fixed(now), () {
+        final bow = now.beginningOfWeek;
+        expect(bow, equals(expected));
+        expect(bow.weekday, equals(DateTime.monday));
+      });
+    });
+
+    test('.endOfWeek', () {
+      final expected = DateTime(
+        now.year,
+        now.month,
+        21,
+        23,
+        59,
+        59,
+        999,
+        999,
+      );
+
+      withClock(Clock.fixed(now), () {
+        final eow = now.endOfWeek;
+        expect(eow, equals(expected));
+        expect(eow.weekday, equals(DateTime.sunday));
+      });
+    });
+
+    test('.beginningOfMonth', () {
+      final expected = DateTime(now.year, now.month, 1, 0, 0, 0, 0, 0);
+
+      withClock(Clock.fixed(now), () {
+        expect(now.beginningOfMonth, equals(expected));
+      });
+    });
+
+    test('.endOfMonth', () {
+      final expected = DateTime(
+        now.year,
+        now.month,
+        31,
+        23,
+        59,
+        59,
+        999,
+        999,
+      );
+
+      withClock(Clock.fixed(now), () {
+        expect(now.endOfMonth, equals(expected));
+      });
+    });
+
+    test('.beginningOfYear', () {
+      final expected = DateTime(now.year, 1, 1, 0, 0, 0, 0, 0);
+
+      withClock(Clock.fixed(now), () {
+        expect(now.beginningOfYear, equals(expected));
+      });
+    });
+
+    test('.endOfYear', () {
+      final expected = DateTime(
+        now.year,
+        12,
+        31,
+        23,
+        59,
+        59,
+        999,
+        999,
+      );
+
+      withClock(Clock.fixed(now), () {
+        expect(now.endOfYear, equals(expected));
+      });
+    });
+
+    test('.tomorrow', () {
+      withClock(Clock.fixed(now), () {
+        expect(now.tomorrow, equals(now.add(Duration(days: 1))));
+      });
+    });
+
+    test('.yesterday', () {
+      withClock(Clock.fixed(now), () {
+        expect(now.yesterday, equals(now.subtract(Duration(days: 1))));
+      });
+    });
+  });
 }
