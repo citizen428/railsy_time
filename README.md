@@ -1,39 +1,36 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A collection of extensions methods for [DateTime], [Duration], and [int] to allow
+for easier date and time calculations.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* Turns integers into [Duration] objects.
+* Easily get [DateTime] objects in the past or future from a [Duration].
+* Get related dates and times for a [DateTime].
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Installation
+
+```yaml
+# pubspec.yaml
+dependencies:
+  railsy_time: ^1.0.0 # Check out the latest version
+```
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:railsy_time/railsy_time.dart';
+
+3.days.fromNow 
+// equal to DateTime.now().add(Duration(days: 3))
+14.days.ago.beginningOfWeek
+// 00:00:00.000000 on the Monday 2 weeks ago
+DateTime.now().endOfYear
+// 23:59:59.999999 on December 31st of the date's year
 ```
 
-## Additional information
+## License
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+MIT License, see the [LICENSE.md](LICENSE.md) file for details.
