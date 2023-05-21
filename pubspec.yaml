@@ -1,12 +1,15 @@
 name: railsy_time
-description: A starting point for Dart libraries or applications.
+description: Convenient date/time extension methods inspired by Ruby on Rails.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/citizen428/railsy_time
+issue_tracker: https://github.com/citizen428/railsy_time/issues
+topics:
+  - date
+  - time
 
 environment:
   sdk: ^3.0.1
 
-# Add regular dependencies here.
 dependencies:
   clock: ^1.1.1
 

@@ -1,8 +1,8 @@
-import 'package:clock/clock.dart' show clock, agoBy, fromNowBy;
+import 'package:clock/clock.dart' show clock;
 
 /// Extension methods for relative [DateTime] calculations.
 extension DateTimeCalculations on Duration {
-  /// Substracts itself from the current time.
+  /// Subtracts itself from the current time.
   ///
   /// ```dart
   /// Duration(hours: 3).ago.toIso8601String()
